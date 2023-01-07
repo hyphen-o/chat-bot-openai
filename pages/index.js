@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 
 export default function Home() {
   const [chatInput, setChatInput] = useState("");
-  const [result, setResult] = useState();
+  const [result, setResult] = useState([]);
 
   async function onSubmit(event) {
     event.preventDefault();
@@ -22,7 +22,7 @@ export default function Home() {
         throw data.error || new Error(`Request failed with status ${response.status}`);
       }
 
-      setResult(data.result);
+      setResult([...result, data.result]);
       setChatInput("");
     } catch(error) {
       // Consider implementing your own error handling logic here
@@ -39,8 +39,19 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <img src="/chat.png" className={styles.icon} />
-        <h3>Chat on OpenAI</h3>
+        <div className={styles.header}>
+          <img src="/chat.png" className={styles.icon} />
+          <h3>Chat on OpenAI</h3>
+        </div>
+        <div className={styles.result}>
+          <ul className='md:flex  hidden flex-initial text-left'>
+            {result.map((text) => (
+              <li className='p-4'>
+                AI: {text}
+              </li>
+            ))}
+          </ul>
+        </div>
         <form onSubmit={onSubmit}>
           <input
             type="text"
@@ -51,7 +62,6 @@ export default function Home() {
           />
           <input type="submit" value="送信" />
         </form>
-        <div className={styles.result}>{result}</div>
       </main>
     </div>
   );

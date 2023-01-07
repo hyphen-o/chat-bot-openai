@@ -13,6 +13,19 @@
   font-weight: bold;
   font-style: normal;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header img {
+  padding-bottom: 20px;
+  padding-right: 20px;
+  height: 50px;
+  width: 50px;
+}
+
 .main,
 .main input {
   font-size: 16px;
@@ -23,12 +36,10 @@
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   padding-top: 60px;
 }
-.main .icon {
-  width: 50px;
-}
+
 .main h3 {
   font-size: 32px;
   line-height: 40px;
@@ -64,4 +75,12 @@
 .main .result {
   font-weight: bold;
   margin-top: 40px;
+}
+
+.result ul {
+  padding-left: 5px;
+}
+
+.result li {
+  list-style: none;
 }
