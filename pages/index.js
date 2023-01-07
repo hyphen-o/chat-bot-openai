@@ -44,9 +44,9 @@ export default function Home() {
           <h3>Chat on OpenAI</h3>
         </div>
         <div className={styles.result}>
-          <ul className='md:flex  hidden flex-initial text-left'>
+          <ul>
             {result.map((text) => (
-              <li className='p-4'>
+              <li>
                 AI: {text}
               </li>
             ))}
