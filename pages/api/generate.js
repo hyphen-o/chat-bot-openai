@@ -19,7 +19,7 @@ export default async function (req, res) {
   if (chat.trim().length === 0) {
     res.status(400).json({
       error: {
-        message: "Please enter a valid animal",
+        message: "Please enter context",
       }
     });
     return;
@@ -29,7 +29,7 @@ export default async function (req, res) {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: `以下はあなたとの会話です。あなたは親切で、賢く、とてもフレンドリーです。\n\n${chat}\n\n`,
-      max_tokens: 200,
+      max_tokens: 500,
       temperature: 0.6,
     });
 
