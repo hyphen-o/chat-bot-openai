@@ -47,7 +47,8 @@ export default function Home() {
           <ul>
             {result.map((text) => (
               <li>
-                AI: {text}
+                <img src="/AI.png" />
+                : {text}
               </li>
             ))}
           </ul>

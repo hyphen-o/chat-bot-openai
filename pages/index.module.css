@@ -17,6 +17,9 @@
 .header {
   display: flex;
   align-items: center;
+  border-bottom: solid;
+  border-color:#10a37f;
+  border-width: 3px;
 }
 
 .header img {
@@ -24,9 +27,12 @@
   padding-right: 20px;
   height: 50px;
   width: 50px;
+  color:#10a37f;
 }
 
 .main,
+
+
 .main input {
   font-size: 16px;
   line-height: 24px;
@@ -37,7 +43,6 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-  padding-top: 60px;
 }
 
 .main h3 {
@@ -50,7 +55,7 @@
 .main form {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 100%;
 }
 .main input[type="text"] {
   padding: 12px 16px;
@@ -74,7 +79,7 @@
 }
 .main .result {
   font-weight: bold;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .result ul {
@@ -83,4 +88,10 @@
 
 .result li {
   list-style: none;
+  border-bottom: solid;
+  border-color:#8e8ea0;
+}
+
+.result li img {
+  width: 30px;
 }
