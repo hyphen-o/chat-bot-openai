@@ -5,8 +5,10 @@ import styles from "./index.module.css";
 export default function Home() {
   const [chatInput, setChatInput] = useState("");
   const [result, setResult] = useState([]);
+  const [me, setMe] = useState([]);
 
   async function onSubmit(event) {
+    setMe([...me, chatInput])
     event.preventDefault();
     try {
       const response = await fetch("/api/generate", {
@@ -45,10 +47,13 @@ export default function Home() {
         </div>
         <div className={styles.result}>
           <ul>
-            {result.map((text) => (
+            {result.map((text, index) => (
               <li>
+                <img src="/person.png" />
+                ： {me && me[index]}
+                <br></br>
                 <img src="/AI.png" />
-                : {text}
+                ： {text}
               </li>
             ))}
           </ul>
